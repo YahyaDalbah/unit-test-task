@@ -1,5 +1,5 @@
 function Add(string){
-  if(string.replaceAll(' ','').length ==0){
+  if(string.replaceAll(' ','').length == 0){
     return 0
   }
   string = string.replaceAll(' ', '').split(',')
@@ -12,6 +12,10 @@ function Add(string){
     let num = parseInt(i)
     if(i != '' && Number.isNaN(num)){
       throw new Error("only accepts numbers")
+    }
+
+    if(num > 1000){
+      continue
     }
 
     countOfNums++

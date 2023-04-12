@@ -48,5 +48,10 @@ describe('calculate a string', () => {
         expect(result).toThrowError("negatives not allowed: -1,-2")
     })
     
-    
+    test('handling numbers above 1000', () => {
+        let string = "1, 1001, 3"
+        const result = Add(string)
+
+        expect(result).toBe(4)
+    })
 })
