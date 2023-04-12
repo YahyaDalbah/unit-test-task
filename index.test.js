@@ -1,9 +1,9 @@
 import Add from "./index";
 
 describe('calculate a string', () => {
-    
+
     test('return 0 from an empty string', () => {
-        let string = ""
+        let string = ","
 
         const result = Add(string)
 
@@ -16,7 +16,7 @@ describe('calculate a string', () => {
 
         expect(result).toBe(1)
 
-        let string2 = "1,3"
+        let string2 = "1, 3"
 
         const result2 = Add(string2)
 
@@ -26,7 +26,27 @@ describe('calculate a string', () => {
         let string = "i'm 1 and 2 and 3"
         const result = () => Add(string)
 
-        expect(result).toThrowError("only supports up to 2 numbers")
+        expect(result).toThrow(Error)
+
+        let string2 = "1, 2, 3"
+        const result2 = () => Add(string2)
+
+        expect(result2).toThrow(Error)
     })
-    // test("")
+
+    test('handle multiple commas', () => {
+        let string = "1,,,2"
+        const result = Add(string)
+
+        expect(result).toBe(3)
+    })
+
+    test('handling negatives', () => {
+        let string = "-1,-2"
+        const result = () => Add(string)
+
+        expect(result).toThrowError("negatives not allowed: -1,-2")
+    })
+    
+    
 })
