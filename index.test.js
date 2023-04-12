@@ -24,9 +24,9 @@ describe('calculate a string', () => {
     })
     test('handle more than 2 numbers and non-numbers', () => {
         let string = "i'm 1 and 2 and 3"
-        const result = Add(string)
+        const result = () => Add(string)
 
-        expect(result).toBe("only supports up to 2 numbers")
+        expect(result).toThrowError("only supports up to 2 numbers")
     })
-    
+    // test("")
 })

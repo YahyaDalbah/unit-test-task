@@ -9,7 +9,7 @@ function Add(string){
 
     countOfNums++
     if(countOfNums > 2){
-      return "only supports up to 2 numbers"
+      throw new Error("only supports up to 2 numbers")
     }
 
     sum += num
