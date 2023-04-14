@@ -1,7 +1,5 @@
 function Add(string){
-  if(string.replaceAll(' ','').length == 0){
-    return 0
-  }
+  
   string = string.replaceAll(' ', '').split(',')
 
   let sum = 0
@@ -34,10 +32,5 @@ function Add(string){
   }
   return sum
 }
-
-
-let a = ['-1', '-2', '-3']
-
-console.log(a.join(','))
 
 export default Add
